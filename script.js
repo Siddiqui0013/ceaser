@@ -15,18 +15,31 @@ encryptBtn.addEventListener("click", ()=>{
 
 Ebtn.addEventListener("click", ()=>{
     // body.style.display = "none"
-    if (ePlain.value == "") {
+    let Ekey = Number.parseInt(eKey.value)
+    console.log(Ekey)
+    console.log(typeof(Ekey))
+    if (ePlain.value.trim() === "") {
         alert("Please Enter a Text")
-    } else {
+    }
+
+
+ else if (isNaN(Ekey) || Ekey < -26 || Ekey > 26) {
+    // alert("Please Enter a Valid Key")
+    alert("Please Enter a Valid Key")
+
+}
+
+    else {
     const plainText = ePlain.value
     let CeaserArr= plainText.split("")
-    let Ekey = Number.parseInt(eKey.value)
 
-
-
+    // if(Ekey > -26 && Ekey < 26){
+    
+    
+    // }
 
 let EnArr = CeaserArr.map((ch) => {
-    console.log(ch);
+    // console.log(ch);
     let ChCode = ch.charCodeAt();
     let NewChCode;
 
@@ -46,48 +59,33 @@ let EnArr = CeaserArr.map((ch) => {
     }
 
     let NewCh = String.fromCharCode(NewChCode);
-    console.log(NewCh);
-    console.log("");
+    // console.log(NewCh);
+    // console.log("");
 
     return NewCh;
 });
-
-
-
-
-//     let EnArr = CeaserArr.map((ch)=>{
-//            let ChCode = ch.charCodeAt()
-//            console.log(ChCode)
-//            let NewChCode
-//            if (ch >= 'A' && ch <= 'Z') {
-//             if (NewChCode > 'Z'.charCodeAt(0)) {
-//                 NewChCode -= 26;
-//             }
-//         }
-//         else if (ch >= 'a' && ch <= 'z') {
-//             if (NewChCode > 'Z'.charCodeAt(0)) {
-//                 NewChCode -= 26;
-//             }
-//             // NewChCode = ChCode+Ekey
-//         }
-//         NewChCode = ChCode+Ekey
-
-//            let NewCh = String.fromCharCode(NewChCode)
-//            return NewCh
-//         })
         
-        const EnString = EnArr.join('')
+const EnString = EnArr.join('')
 
-        enSolution.style.display = "block"
-        eText.value = EnString
-        console.log(EnString)
-    }
+enSolution.style.display = "block"
+eText.value = EnString
+// console.log(EnString)
+}
 })
 
+
+
+
 Decryptbtn.addEventListener("click", () => {
+    let Ekey = Number.parseInt(dKey.value)
+
     if (ceaserText.value == "") {
-        alert("Please Enter a Text");
-    } else {
+        alert("Please Enter a Text")
+    } 
+    else if (isNaN(Ekey) || Ekey < -26 || Ekey > 26) {
+        alert("Please Enter a Valid Key")
+    }
+    else {
         const ceaser = ceaserText.value;
         let CeaserArr = ceaser.split("");
         let Dkey = Number.parseInt(dKey.value);
@@ -119,6 +117,31 @@ Decryptbtn.addEventListener("click", () => {
         dText.value = EnString;
     }
 });
+
+
+
+//     let EnArr = CeaserArr.map((ch)=>{
+//            let ChCode = ch.charCodeAt()
+//            console.log(ChCode)
+//            let NewChCode
+//            if (ch >= 'A' && ch <= 'Z') {
+//             if (NewChCode > 'Z'.charCodeAt(0)) {
+//                 NewChCode -= 26;
+//             }
+//         }
+//         else if (ch >= 'a' && ch <= 'z') {
+//             if (NewChCode > 'Z'.charCodeAt(0)) {
+//                 NewChCode -= 26;
+//             }
+//             // NewChCode = ChCode+Ekey
+//         }
+//         NewChCode = ChCode+Ekey
+
+//            let NewCh = String.fromCharCode(NewChCode)
+//            return NewCh
+//         })
+
+
 
 
 
