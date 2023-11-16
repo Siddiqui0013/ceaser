@@ -4,11 +4,17 @@ decrypt.style.display = "none"
 // encrypt.style.display = "none"
 
 decryptBtn.addEventListener("click", ()=>{
+    eKey.value = "";
+    ePlain.value = "";
+    eText.value = "";
     decrypt.style.display = "block"
     encrypt.style.display = "none"
 })
 
 encryptBtn.addEventListener("click", ()=>{
+    dKey.value = "";
+    ceaserText.value == "";
+    dText.value = "";
     decrypt.style.display = "none"
     encrypt.style.display = "block"
 })
