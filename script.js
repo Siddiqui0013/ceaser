@@ -13,7 +13,7 @@ decryptBtn.addEventListener("click", ()=>{
 
 encryptBtn.addEventListener("click", ()=>{
     dKey.value = "";
-    ceaserText.value == "";
+    ceaserText.value = "";
     dText.value = "";
     decrypt.style.display = "none"
     encrypt.style.display = "block"
@@ -75,6 +75,9 @@ const EnString = EnArr.join('')
 
 enSolution.style.display = "block"
 eText.value = EnString
+eKey.value = "";
+ePlain.value = "";
+
 // console.log(EnString)
 }
 })
@@ -122,6 +125,9 @@ Decryptbtn.addEventListener("click", () => {
         deSolution.style.display = "block";
         dText.value = EnString;
     }
+dKey.value = ""
+ceaserText.value = ""
+
 });
 
 
@@ -146,6 +152,7 @@ Decryptbtn.addEventListener("click", () => {
 //            let NewCh = String.fromCharCode(NewChCode)
 //            return NewCh
 //         })
+
 
 
 
